@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Churn Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input, select {
+            padding: 8px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .btn {
+            grid-column: span 2;
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .output {
+            grid-column: span 2;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Customer Churn Prediction</h1>
+        <form method="POST" action="/">
+            <!-- SeniorCitizen -->
+            <label for="query1">Senior Citizen:</label>
+            <select id="query1" name="query1">
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+
+            <!-- MonthlyCharges -->
+            <label for="query2">Monthly Charges:</label>
+            <input type="number" step="0.01" id="query2" name="query2" required>
+
+            <!-- TotalCharges -->
+            <label for="query3">Total Charges:</label>
+            <input type="number" step="0.01" id="query3" name="query3" required>
+
+            <!-- Partner -->
+            <label for="query4">Partner:</label>
+            <select id="query4" name="query4">
+                <option value="No">No</option>
+                <option value="Yes">Yes</option>
+            </select>
+
+            <!-- Dependents -->
+            <label for="query5">Dependents:</label>
+            <select id="query5" name="query5">
+                <option value="No">No</option>
+                <option value="Yes">Yes</option>
+            </select>
+
+            <!-- MultipleLines -->
+            <label for="query6">Multiple Lines:</label>
+            <select id="query6" name="query6">
+                <option value="No">No</option>
+                <option value="Yes">Yes</option>
+                <option value="No phone service">No phone service</option>
+            </select>
+
+            <!-- OnlineSecurity -->
+            <label for="query7">Online Security:</label>
+            <select id="query7" name="query7">
+                <option value="No">No</option>
+                <option value="Yes">Yes</option>
+                <option value="No internet service">No internet service</option>
+            </select>
+
+            <!-- OnlineBackup -->
+            <label for="query8">Online Backup:</label>
+            <select id="query8" name="query8">
+                <option value="No">No</option>
+                <option value="Yes">Yes</option>
+                <option value="No internet service">No internet service</option>
+            </select>
+
+            <!-- DeviceProtection -->
+            <label for="query9">Device Protection:</label>
+            <select id="query9" name="query9">
+                <option value="No">No</option>
+                <option value="Yes">Yes</option>
+                <option value="No internet service">No internet service</option>
+            </select>
+
+            <!-- TechSupport -->
+            <label for="query10">Tech Support:</label>
+            <select id="query10" name="query10">
+                <option value="No">No</option>
+                <option value="Yes">Yes</option>
+                <option value="No internet service">No internet service</option>
+            </select>
+
+            <!-- Contract -->
+            <label for="query11">Contract:</label>
+            <select id="query11" name="query11">
+                <option value="Month-to-month">Month-to-month</option>
+                <option value="One year">One year</option>
+                <option value="Two year">Two year</option>
+            </select>
+
+            <!-- PaperlessBilling -->
+            <label for="query12">Paperless Billing:</label>
+            <select id="query12" name="query12">
+                <option value="No">No</option>
+                <option value="Yes">Yes</option>
+            </select>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn">Predict</button>
+
+            <!-- Output -->
+            <div class="output">
+                <p>{{ output1 }}</p>
+                <p>{{ output2 }}</p>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+
